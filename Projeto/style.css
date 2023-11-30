@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+}
+
+header{
+    position: sticky;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: darkcyan;
+    justify-content: center;
+    align-items: center;
+}
+
+header a{
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+header .nav-brand{
+    color: #365e9f;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header a .text-ti{
+    color: #00b9de;
+}
+
+header .nav-sep-ver{
+    width: 7px;
+    background-color: white;
+    height: 60px;
+    border: 2px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.selection-table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body table{
+    margin-top: 10%;
+    width: 90%;
+    table-layout: fixed;
+}
+
+body table button{
+    width: 100%;
+    height: 200px;
+    margin: 10px;
+}
