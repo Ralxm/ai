@@ -287,4 +287,13 @@ footer a{
     margin-left: 10%;
 }
 
+.footer-wrapper-buttons1{
+    float: left;
+    width: calc(100/3);
+}
+
+.footer-wrapper-buttons1 ul li{
+    margin: 5px;
+}
+
 
