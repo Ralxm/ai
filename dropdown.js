@@ -1,6 +1,5 @@
 function dropdown1() {
     document.getElementById("dropdown-classicos").classList.toggle("show");
-    dropdownTheme()
     if(document.getElementById("dropdown-desportivos").classList.value.includes("show")){
         document.getElementById("dropdown-desportivos").classList.toggle("show");
     }
@@ -13,7 +12,6 @@ function dropdown1() {
 }
 function dropdown2() {
     document.getElementById("dropdown-desportivos").classList.toggle("show");
-    dropdownTheme()
     if(document.getElementById("dropdown-classicos").classList.value.includes("show")){
         document.getElementById("dropdown-classicos").classList.toggle("show");
     }
@@ -26,7 +24,6 @@ function dropdown2() {
 }
 function dropdown3() {
     document.getElementById("dropdown-super").classList.toggle("show");
-    dropdownTheme()
     if(document.getElementById("dropdown-desportivos").classList.value.includes("show")){
         document.getElementById("dropdown-desportivos").classList.toggle("show");
     }
@@ -39,7 +36,6 @@ function dropdown3() {
 }
 function dropdown4() {
     document.getElementById("dropdown-camioes").classList.toggle("show");
-    dropdownTheme()
     if(document.getElementById("dropdown-desportivos").classList.value.includes("show")){
         document.getElementById("dropdown-desportivos").classList.toggle("show");
     }

@@ -1,6 +1,5 @@
 function changeTheme(){
     document.documentElement.classList.toggle("darkmode");
-   
     /*if(document.getElementById("theme").innerHTML == 'Escuro'){
         document.getElementById("theme").innerHTML = 'Claro'
 
@@ -20,3 +19,4 @@ function changeTheme(){
     }
     dropdownTheme();*/
 }
+
