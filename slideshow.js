@@ -1,5 +1,5 @@
 
-window.onload = function() {
+window.onload = function() { //FAZ SLIDESHOW NA PÁGINA PRINCIPAL
     let slideIndex = 0;
     showSlides();
 
@@ -18,28 +18,28 @@ window.onload = function() {
 }
 
 
-let classicos = [];
+let classicos = []; //ARRAY COM OS PATHS DAS IMAGENS DOS CARROS CLÁSSICOS
 classicos[0] = 'carros-classicos/capri.jpg';
 classicos[1] = 'carros-classicos/db5.jpg';
 classicos[2] = 'carros-classicos/124.jpg';
 classicos[3] = 'carros-classicos/4l.jpg';
 classicos[4] = 'carros-classicos/beetle.jpg';
 
-let desportivos = [];
+let desportivos = []; //ARRAY COM OS PATHS DAS IMAGENS DOS CARROS DESPORTIVOS
 desportivos[0] = 'carros-desportivos/r8.jpg';
 desportivos[1] = 'carros-desportivos/dark-horse.jpg';
 desportivos[2] = 'carros-desportivos/camaro.jpg';
 desportivos[3] = 'carros-desportivos/i4.jpg';
 desportivos[4] = 'carros-desportivos/r34.jpg';
 
-let Super = [];
+let Super = []; //ARRAY COM OS PATHS DAS IMAGENS DOS CARROS SUPER
 Super[0] = 'carros-super/porsche.jpg';
 Super[1] = 'carros-super/senna.jpg';
 Super[2] = 'carros-super/agera.jpg';
 Super[3] = 'carros-super/veneno.jpg';
 Super[4] = 'carros-super/noire.jpg';
 
-let todo = [];
+let todo = []; //ARRAY COM OS PATHS DAS IMAGENS DOS CARROS TODO TERRENO
 todo[0] = 'carros-todoterreno/Defender.jpg';
 todo[1] = 'carros-todoterreno/Unimog.jpg';
 todo[2] = 'carros-todoterreno/fj40.jpg';
@@ -48,7 +48,11 @@ todo[4] = 'carros-todoterreno/Bronco.jpg';
 
 
 
-//FUNÇÃO PARA O DROPDOWN DOS CARROS CLÁSSICOS
+//FUNÇÃO PARA ALTERAR O CARRO CLÁSSICO ATUAL A SER MOSTRADO NA PÁGINA
+
+//ESTA FUNÇÃO, JUNTO DAS PRÓXIMAS 3, PERMITEM MUDAR O CARRO ATUALMENTE A SER MOSTRADO NA PÁGINAL PRINCIPAL.
+//É CHAMADA PELA FUNÇÃO "slide_previous()" ou "slide_next()" E RECEBE COMO PARAMETRO "a" QUE PODE SER
+//UM NÚMERO VINDO DE UMA DAS 2 FUNÇÕES OU UM OBJETO (ID) VINDO DOS DROPDOWNS (EX: LINHA 84 DO "index.html")
 function classic_car(a){
     let x;
     if(typeof(a) == 'object'){
@@ -91,7 +95,7 @@ function classic_car(a){
             document.getElementById('classic-text-1').innerHTML = "Aston Martin DB5";
             document.getElementById('classic-text-2').innerHTML = "Extremamente conhecido e reconhecido onde quer que vá, o Aston Martin DB5 é um carro com características inigualáveis. Tendo ganho uma enorme fama pela franquia «007».";
         
-            document.getElementById('classic-info-1').innerHTML = "Cavalos: 282 cv";
+            document.getElementById('classic-info-1').innerHTML = "Cavalos: 282 CV";
             document.getElementById('classic-info-2').innerHTML = "Binário: 390 Nm";
             document.getElementById('classic-info-3').innerHTML = "Peso: 1465 Kg";
             document.getElementById('classic-info-4').innerHTML = "Combustível: Gasolina";
@@ -102,7 +106,7 @@ function classic_car(a){
             document.getElementById('classic-text-1').innerHTML = "Fiat 124";
             document.getElementById('classic-text-2').innerHTML = "Italiano em todo o seu esplendor, um carro versátil, confortável, rápido e fiável. Inicialmente desenhado para ser um carro familiar, rapidamente a Fiat viu mais potencialidades no 124 e produziu o Speciale e a Familiare.";
 
-            document.getElementById('classic-info-1').innerHTML = "Cavalos: 118 cv";
+            document.getElementById('classic-info-1').innerHTML = "Cavalos: 118 CV";
             document.getElementById('classic-info-2').innerHTML = "Binário: 153 Nm";
             document.getElementById('classic-info-3').innerHTML = "Peso: 960 Kg";
             document.getElementById('classic-info-4').innerHTML = "Combustível: Gasolina";
@@ -113,7 +117,7 @@ function classic_car(a){
             document.getElementById('classic-text-1').innerHTML = "Renault 4L";
             document.getElementById('classic-text-2').innerHTML = " Foi construido com o propósito de tirar as vantagens e limar as desvantagens do 2CV, um carro económico, fácil de manter, fiável e divertido.";
 
-            document.getElementById('classic-info-1').innerHTML = "Cavalos: 37 cv";
+            document.getElementById('classic-info-1').innerHTML = "Cavalos: 37 CV";
             document.getElementById('classic-info-2').innerHTML = "Binário: 72 Nm";
             document.getElementById('classic-info-3').innerHTML = "Peso: 720 Kg";
             document.getElementById('classic-info-4').innerHTML = "Combustível: Gasolina";
@@ -124,7 +128,7 @@ function classic_car(a){
             document.getElementById('classic-text-1').innerHTML = "Volkswagen Beetle";
             document.getElementById('classic-text-2').innerHTML = "Um dos primeiros carros com motor montado atrás, compacto e pensado nas pessoas, tanto que a alcunha é «The people's car». Com a primeira versão ter sido criada durante a segunda guerra mundial em 1938, manteve-se em produção até 2003.";
 
-            document.getElementById('classic-info-1').innerHTML = "Cavalos: 25 cv";
+            document.getElementById('classic-info-1').innerHTML = "Cavalos: 25 CV";
             document.getElementById('classic-info-2').innerHTML = "Binário: 66 Nm";
             document.getElementById('classic-info-3').innerHTML = "Peso: 892 Kg";
             document.getElementById('classic-info-4').innerHTML = "Combustível: Gasolina";
@@ -133,6 +137,7 @@ function classic_car(a){
     }
 }
 
+//FUNÇÃO PARA ALTERAR O CARRO DESPORTIVOS ATUAL A SER MOSTRADO NA PÁGINA
 function sports_car(a){
     let x;
     if(typeof(a) == 'object'){
@@ -184,7 +189,7 @@ function sports_car(a){
         case 'sports-3':
             document.getElementById('carro-desportivo').src=desportivos[2];
             document.getElementById('sports-text-1').innerHTML = "Chevrolet Camaro ZL1";
-            document.getElementById('sports-text-2').innerHTML = "Um dos grandes carros com o verdadeiro musculo americano, o ZL1 é uma versão mais requintada do Camaro. Debitando 650 cavalos com a ajuda de um V8 com um total de 6200 de cilindrada não é um carro citadino mas sim um carro para o verdadeiro amante de velocidade.";
+            document.getElementById('sports-text-2').innerHTML = "Um dos grandes carros com o verdadeiro músculo americano, o ZL1 é uma versão mais requintada do Camaro. Debitando 650 cavalos com a ajuda de um V8 com um total de 6200 de cilindrada não é um carro citadino mas sim um carro para o verdadeiro amante de velocidade.";
 
             document.getElementById('sports-info-1').innerHTML = "Cavalos: 650 CV";
             document.getElementById('sports-info-2').innerHTML = "Binário: 868 Nm";
@@ -217,6 +222,7 @@ function sports_car(a){
     }
 }
 
+//FUNÇÃO PARA ALTERAR O CARRO SUPER ATUAL A SER MOSTRADO NA PÁGINA
 function super_car(a){
     let x;
     if(typeof(a) == 'object'){
@@ -246,7 +252,7 @@ function super_car(a){
         case 'super-1':
             document.getElementById('carro-super').src=Super[0];
             document.getElementById('super-text-1').innerHTML = "Porsche 911 GT2 RS";
-            document.getElementById('super-text-2').innerHTML = "Um monstro das pistas, inicialmente desenhado para as curvas de pista o GT2 RS é o verdadeiro Porsche, uma verdadeira obra de arte. A geração 991 traz um 6 em linha de 3.8 litros a debitar 691 cavalos e 750 Nm de binário. É o verdadeiro brinquedo para graúdos.";
+            document.getElementById('super-text-2').innerHTML = "Um monstro das pistas, um carro de alto rendimento, o GT2 RS é o verdadeiro Porsche, uma verdadeira obra de arte. A geração 991 traz um 6 em linha de 3.8 litros a debitar 691 cavalos e 750 Nm de binário. É o verdadeiro brinquedo para graúdos.";
 
             document.getElementById('super-info-1').innerHTML = "Cavalos: 690 CV";
             document.getElementById('super-info-2').innerHTML = "Binário: 750 Nm";
@@ -257,7 +263,7 @@ function super_car(a){
         case 'super-2':
             document.getElementById('carro-super').src=Super[1];
             document.getElementById('super-text-1').innerHTML = "McLaren Senna";
-            document.getElementById('super-text-2').innerHTML = "Em homenagem ao melhor piloto de Fórmula 1 Ayrton Senna, o Senna é o piloto em forma de carro. Ágil, veloz, leve, potente e potente. Sem dúvida alguma que o McLaren Senna é uma obra de arte sobre rodas.";
+            document.getElementById('super-text-2').innerHTML = "Em homenagem ao melhor piloto de Fórmula 1 Ayrton Senna, o Senna é o piloto em forma de carro. Ágil, veloz, leve e potente. Sem dúvida alguma que este carro é uma obra de arte sobre rodas.";
         
             document.getElementById('super-info-1').innerHTML = "Cavalos: 789 CV";
             document.getElementById('super-info-2').innerHTML = "Binário: 800 Nm";
@@ -290,7 +296,7 @@ function super_car(a){
         case 'super-5':
             document.getElementById('carro-super').src=Super[4];
             document.getElementById('super-text-1').innerHTML = "Bugatti La Voiture Noire";
-            document.getElementById('super-text-2').innerHTML = "Certamente um dos carros mais exclusivos e mais bonitos do mundo, o Bugatti La Voitue Noire é a Mona Lisa sobre rodas. É um carro que foi desenhado e construido a pensar em todos os detalhes possíveis.";
+            document.getElementById('super-text-2').innerHTML = "Certamente um dos carros mais exclusivos e mais bonitos do mundo, o Bugatti La Voiture Noire é a Mona Lisa sobre rodas. É um carro que foi desenhado e construido a pensar em todos os detalhes possíveis.";
 
             document.getElementById('super-info-1').innerHTML = "Cavalos: 1500 CV";
             document.getElementById('super-info-2').innerHTML = "Binário: 1600 Nm";
@@ -301,6 +307,7 @@ function super_car(a){
     }
 }
 
+//FUNÇÃO PARA ALTERAR O CARRO TODO TERRENO ATUAL A SER MOSTRADO NA PÁGINA
 function todo_terreno(a){
     let x;
     if(typeof(a) == 'object'){
@@ -330,7 +337,7 @@ function todo_terreno(a){
         case 'todoterreno-1':
             document.getElementById('carro-todoterreno').src=todo[0];
             document.getElementById('todoterreno-text-1').innerHTML = "Land Rover Defender";
-            document.getElementById('todoterreno-text-2').innerHTML = "Repartido em 3 fases. Um carro potente, com tração às quatro e bastante fiável. Usado não só no mundo civil mas também ao serviço militar bem como ao serviço dos corpos de bombeiros.";
+            document.getElementById('todoterreno-text-2').innerHTML = "Um carro potente, com tração às quatro e bastante fiável. Usado não só no mundo civil mas também ao serviço militar bem como ao serviço dos corpos de bombeiros.";
 
             document.getElementById('todoterreno-info-1').innerHTML = "Cavalos: 120 CV";
             document.getElementById('todoterreno-info-2').innerHTML = "Binário: 300 Nm";
@@ -386,14 +393,14 @@ function todo_terreno(a){
 }
 
 //FUNÇÃO PARA O BOTÃO ANTERIOR DE TODAS AS 4 IMAGENS
-function slide_previous(a){
-    let x = a.id;
+function slide_previous(a){ //FUNÇÃO RECEBE "a" COMO PARÂMETRO (BUTTON)
+    let x = a.id; //GUARDA O ID DO BOTÃO
     let element;
     let array;
-    switch (x){
+    switch (x){ //DEPENDENDO DO BOTÃO CLICADO (1, 3, 5, 7 SÃO OS BOTÕES QUE ESTÃO À ESQUERDA DE CADA IMAGEM)
         case '1' :
-            element = document.getElementById('carro-classico');
-            array = classicos;
+            element = document.getElementById('carro-classico'); //DEFINE O ELEMENTO (IMAGEM) QUE VAI SER ALTERADA
+            array = classicos; //DEFINE O ARRAY A SER UTILIZADO (PATHS DAS IMAGENS DOS CARROS)
             break;
         case '3' :
             element = document.getElementById('carro-desportivo');
@@ -409,23 +416,22 @@ function slide_previous(a){
             break;
     }
     
-    for(let i = 0; i<5; i++){
-        if(element.src.match(array[i])){
-            if( i-1 < 0){
-                i=5
+    for(let i = 0; i<5; i++){ //PASSA POR TODAS AS IMAGENS
+        if(element.src.match(array[i])){ //ENCONTRA A IMAGEM QUE ESTÁ ATUALMENTE A SER MOSTRADA 
+            if( i-1 < 0){ //SE A IMAGEM ANTERIOR NÃO EXISTIR 
+                i=5 //PASSA PARA A ÚLTIMA IMAGEM
             }
-            //element.src = array[i-1];
-            switch(x){
-                case '1':
+            switch(x){ //DEPENDENDO DO BOTÃO CLICADO (1, 3, 5, 7 SÃO OS BOTÕES QUE ESTÃO À ESQUERDA DE CADA IMAGEM) 
+                case '1': //ALTERA A IMAGEM DO CARRO CLÁSSICO
                     classic_car(i-1);
                     break;
-                case '3':
+                case '3': //ALTERA A IMAGEM DO CARRO DESPORTIVO
                     sports_car(i-1);
                     break;
-                case '5':
+                case '5': //ALTERA A IMAGEM DO CARRO SUPER
                     super_car(i-1);
                     break;
-                case '7':
+                case '7': //ALTERA A IMAGEM DO CARRO TODO TERRENO
                     todo_terreno(i-1);
                     break;
             }
@@ -440,7 +446,7 @@ function slide_next(a){
     let x = a.id;
     let element;
     let array;
-    switch (x){
+    switch (x){ //DEPENDENDO DO BOTÃO CLICADO (2, 4, 6, 8 SÃO OS BOTÕES QUE ESTÃO À DIREITA DE CADA IMAGEM)
         case '2' :
             element = document.getElementById('carro-classico');
             array = classicos;
@@ -458,27 +464,26 @@ function slide_next(a){
             array = todo;
             break;
     }
-
-    for(let i = 0; i<5; i++){
-        if(element.src.match(array[i])){
-            if( i+1 > 4){
-                i=-1
+ 
+    for(let i = 0; i<5; i++){  //PASSA POR TODAS AS IMAGENS
+        if(element.src.match(array[i])){ //ENCONTRA A IMAGEM QUE ESTÁ ATUALMENTE A SER MOSTRADA 
+            if( i+1 > 4){ //SE A PRÓXIMA IMAGEM NÃO EXISTIR 
+                i=-1 //PASSA PARA A PRIMEIRA IMAGEM
             }
-            switch(x){
-                case '2':
+            switch(x){ //DEPENDENDO DO BOTÃO CLICADO (2, 4, 6, 8 SÃO OS BOTÕES QUE ESTÃO À DIREITA DE CADA IMAGEM)
+                case '2': //ALTERA A IMAGEM DO CARRO CLÁSSICO
                     classic_car(i+1);
                     break;
-                case '4':
+                case '4': //ALTERA A IMAGEM DO CARRO DESPORTIVO
                     sports_car(i+1);
                     break;
-                case '6':
+                case '6': //ALTERA A IMAGEM DO CARRO SUPER
                     super_car(i+1);
                     break;
-                case '8':
+                case '8': //ALTERA A IMAGEM DO CARRO TODO TERRENO
                     todo_terreno(i+1);
                     break;
             }
-            //element.src = array[i+1];
             break;
         }
     }

@@ -1,121 +1,201 @@
 <!DOCTYPE html>
 
+
+<html>
+
 <head>
-    <header id="topo">
+    <header id="topo"></header>
+    <title>Página Principal</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="slideshow.css">
     <link rel="stylesheet" href="dropdown.css">
-    <link rel="stylesheet" href="popup.css">
 
     <script src="dropdown.js"></script>
     <script src="slideshow.js"></script>
-    <script type="text/javascript" src="info-carros.json"></script>
     <script src="theme.js"></script>
-    <script src="popup.js"></script>
 
     <style>
-        .darkmode .left-header-nav{
+        .darkmode .left-header-nav { /*DARKMODE É CLASSE PARA APLICAR O TEMA ESCURO NA PÁGINA TODA*/
             background: rgba(0, 0, 0, 0.6);
         }
-        .darkmode .center-header-nav{
+
+        .darkmode .center-header-nav {
             background: rgba(0, 0, 0, 0.7);
         }
-        .darkmode .right-header-nav{
+
+        .darkmode .right-header-nav {
             background: rgba(0, 0, 0, 0.6);
         }
-        .darkmode body{
+
+        .darkmode body {
             background: rgba(0, 0, 0, 0.5);
+        }
+
+        .darkmode .dropdown-elementos {
+            background: rgb(120, 120, 120);
+        }
+
+        .darkmode .dropdown-elementos a {
+            color: white;
+        }
+
+        .darkmode .div-text {
+            color: white;
+        }
+
+        .darkmode .orient-slideshow-carro {
+            color: white;
+        }
+
+        .loading .imaginary-button-left {       /*  LOADING FAZ COM QUE OS BOTÕES PRESENTES NAS IMAGENS DE CARROS     */
+            background: rgba(0, 0, 0, 0.7);   /*  FIQUEM VISIVEIS NOS PRIMEIROS 2 SEGUNDOS EM QUE A PÁGINA CARREGUE */
+        }                                       /*  EFETIO FEITO COM JAVASCRIPT NO FICHEIRO "theme.js"                */
+
+        .loading .imaginary-button-right {
+            background: rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
 
-<html>
+
 
 <body>
-    <div class="header-nav"> <!-- HEADER COM BOTÕES PARA SELEÇÃO-->
-        <div class="left-header-nav" id="left-header-nav">
-            <div class="time-and-theme">
-                <div class="theme-container">
-                    <a class="theme" onclick="changeTheme()" id="theme">Escuro</a>
+    <header>
+        <div class="header-nav"> <!-- HEADER COM BOTÕES PARA SELEÇÃO-->
+            <div class="left-header-nav" id="left-header-nav"> <!--HEADER DO LADO ESQUERDO DA PÁGINA-->
+                <div class="time-and-theme">
+                    <div class="theme-container">
+                        <label class="switch">
+                            <input type="checkbox" id="theme" onchange="changeTheme()"> <!--SWITCH PARA ALTERAR TEMA DA PÁGINA-->
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="time">
+                        <a id="date">
+                            <script src="horario.js" type="text/javascript"></script> <!--TEXTO COM DATA E HORÁRIO-->
+                        </a>
+                    </div>
                 </div>
-                <div class="time">
-                    <a id="date"><script src="horario.js" type="text/javascript"></script></a>
+
+                <div class="dropdown-classicos-desportivos"> <!--DIV COM TEXTO/DROPDOWN DOS CARROS CLÁSSICOS E DESPORTIVOS-->
+                    <ul>
+                        <li>
+                            <div class="dropdown-1"> <!--TEXTO/DROPDOWN DOS CARROS CLÁSSICOS-->
+                                <button onclick="dropdown1()">Clássicos</button>
+                                <div id="dropdown-classicos" class="dropdown-elementos">
+                                    <a href="#anchor-classico" id="classic-1" onclick="classic_car(this)">
+                                        <strong>Ford</strong> Capri
+                                    </a>
+                                    <a href="#anchor-classico" id="classic-2" onclick="classic_car(this)">
+                                        <strong>Aston Martin</strong> DB5
+                                        </a>
+                                    <a href="#anchor-classico" id="classic-3"
+                                        onclick="classic_car(this)">
+                                        <strong>Fiat</strong> 124
+                                    </a>
+                                    <a href="#anchor-classico" id="classic-4" onclick="classic_car(this)">
+                                        <strong>Renault</strong> 4L
+                                    </a>
+                                    <a href="#anchor-classico" id="classic-5" onclick="classic_car(this)">
+                                        <strong>Volkswagen</strong> Beetle
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="separador"></div> <!--BARRA VERTICAL QUE SEPARA TEXTO-->
+                        </li>
+                        <li>
+                            <div class="dropdown-2"> <!--TEXTO/DROPDOWN DOS CARROS DESPORTIVOS-->
+                                <button onclick="dropdown2()">Desportivos</button>
+                                <div id="dropdown-desportivos" class="dropdown-elementos">
+                                    <a href="#anchor-sports" id="sports-1" onclick="sports_car(this)">
+                                        <strong>Audi</strong> R8
+                                    </a>
+                                    <a href="#anchor-sports" id="sports-2" onclick="sports_car(this)">
+                                        <strong>Ford</strong> Mustang Dark Horse
+                                    </a>
+                                    <a href="#anchor-sports" id="sports-3" onclick="sports_car(this)">
+                                        <strong>Chevrolet</strong> Camaro ZL1
+                                    </a>
+                                    <a href="#anchor-sports" id="sports-4" onclick="sports_car(this)">
+                                        <strong>BMW</strong> i4 M50
+                                    </a>
+                                    <a href="#anchor-sports" id="sports-5" onclick="sports_car(this)">
+                                        <strong>Nissan</strong> Skyline GT-R R34
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            
-            
-            <div class="dropdown-classicos-desportivos">
-                <ul>
-                    <li>
-                        <div class="dropdown-1">
-                            <button onclick="dropdown1()">Clássicos</button>
-                            <div id="dropdown-classicos" class="dropdown-elementos">
-                                <a href="#anchor-classico" id="classic-1" onclick="classic_car(this)"><strong>Ford</strong> Capri</a>
-                                <a href="#anchor-classico" id="classic-2" onclick="classic_car(this)"><strong>Aston Martin</strong> DB5</a>
-                                <a href="#anchor-classico" id="classic-3" onclick="classic_car(this)"><strong>Fiat</strong> 124</a>
-                                <a href="#anchor-classico" id="classic-4" onclick="classic_car(this)"><strong>Renault</strong> 4L</a>
-                                <a href="#anchor-classico" id="classic-5" onclick="classic_car(this)"><strong>Volkswagen</strong> Beetle</a>
+            <div class="center-header-nav" id="center-header-nav"> <!--DIV CENTRAL COM TEXTO AUTOMÓVEIS-->
+                <a>Automóveis</a>
+            </div>
+            <div class="right-header-nav" id="right-header-nav"> <!--HEADER DO LADO DIREITO DA PÁGINA-->
+                <div class="dropdown-super-todoterreno"> <!--DIV COM TEXTO/DROPDOWN DOS CARROS SUPER E TODO TERRENO-->
+                    <ul>
+                        <li>
+                            <div class="dropdown-3"> <!--TEXTO/DROPDOWN DOS CARROS SUPER-->
+                                <button onclick="dropdown3()">Super</button>
+                                <div id="dropdown-super" class="dropdown-elementos">
+                                    <a href="#anchor-super" id="super-1" onclick="super_car(this)">
+                                        <strong>Porsche</strong> 911 GT2 RS
+                                    </a>
+                                    <a href="#anchor-super" id="super-2" onclick="super_car(this)">
+                                        <strong>McLaren</strong> Senna
+                                    </a>
+                                    <a href="#anchor-super" id="super-3" onclick="super_car(this)">
+                                        <strong>Koenigsegg</strong> Agera RS
+                                    </a>
+                                    <a href="#anchor-super" id="super-4" onclick="super_car(this)">
+                                        <strong>Lamborghini</strong> Veneno
+                                    </a>
+                                    <a href="#anchor-super" id="super-5" onclick="super_car(this)">
+                                        <strong>Bugatti</strong> La Voiture Noire
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="separador"></div>
-                    </li>
-                    <li>
-                        <div class="dropdown-2">
-                            <button onclick="dropdown2()">Desportivos</button>
-                            <div id="dropdown-desportivos" class="dropdown-elementos">
-                                <a href="#anchor-sports" id="sports-1" onclick="sports_car(this)"><strong>Audi</strong> R8</a>
-                                <a href="#anchor-sports" id="sports-2" onclick="sports_car(this)"><strong>Ford</strong> Mustang Dark Horse</a>
-                                <a href="#anchor-sports" id="sports-3"onclick="sports_car(this)"><strong>Chevrolet</strong> Camaro ZL1</a>
-                                <a href="#anchor-sports" id="sports-4" onclick="sports_car(this)"><strong>BMW</strong> i4 M50</a>
-                                <a href="#anchor-sports" id="sports-5"onclick="sports_car(this)"><strong>Nissan</strong> Skyline GT-R R34</a>
+                        </li>
+                        <li>
+                            <div class="separador"></div> <!--BARRA VERTICAL QUE SEPARA TEXTO-->
+                        </li>
+                        <li>
+                            <div class="dropdown-4"> <!--TEXTO/DROPDOWN DOS CARROS TODO TERRENO-->
+                                <button onclick="dropdown4()">Todo Terreno</button>
+                                <div id="dropdown-camioes" class="dropdown-elementos">
+                                    <a href="#anchor-todoterreno" id="todoterreno-1" onclick="todo_terreno(this)">
+                                        <strong>Land Rover</strong> Defender
+                                    </a>
+                                    <a href="#anchor-todoterreno" id="todoterreno-2" onclick="todo_terreno(this)">
+                                        <strong>Mercedes-Benz</strong> Unimog
+                                    </a>
+                                    <a href="#anchor-todoterreno" id="todoterreno-3" onclick="todo_terreno(this)">
+                                        <strong>Toyota</strong> FJ40
+                                    </a>
+                                    <a href="#anchor-todoterreno" id="todoterreno-4" onclick="todo_terreno(this)">
+                                        <strong>Jeep</strong> Wrangler
+                                    </a>
+                                    <a href="#anchor-todoterreno" id="todoterreno-5" onclick="todo_terreno(this)">
+                                        <strong>Ford</strong> Bronco
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-space"> <!--TEXTO/BOTÃO PARA PÁGINA DE CONTACTOS-->
+                    <button onclick="window.location.href='contact.html'">Contacte-nos</button>
+                </div>
             </div>
         </div>
-        <div class="center-header-nav" id="center-header-nav">
-            <a>Automóveis</a>
-        </div>
-        <div class="right-header-nav" id="right-header-nav">
-            <ul>
-                <li>
-                    <div class="dropdown-3">
-                        <button onclick="dropdown3()">Super</button>
-                        <div id="dropdown-super" class="dropdown-elementos">
-                            <a href="#anchor-super" id="super-1" onclick="super_car(this)"><strong>Porsche</strong> 911 GT2 RS</a>
-                            <a href="#anchor-super" id="super-2" onclick="super_car(this)"><strong>McLaren</strong> Senna</a>
-                            <a href="#anchor-super" id="super-3" onclick="super_car(this)"><strong>Koenigsegg</strong> Agera RS</a>
-                            <a href="#anchor-super" id="super-4" onclick="super_car(this)"><strong>Lamborghini</strong> Veneno</a>
-                            <a href="#anchor-super" id="super-5" onclick="super_car(this)"><strong>Bugatti</strong> La Voiture Noire</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="separador"></div>
-                </li>
-                <li>
-                    <div class="dropdown-4">
-                        <button onclick="dropdown4()">Todo Terreno</button>
-                        <div id="dropdown-camioes" class="dropdown-elementos">
-                            <a href="#anchor-todoterreno" id="todoterreno-1" onclick="todo_terreno(this)"><strong>Land Rover</strong> Defender</a>
-                            <a href="#anchor-todoterreno" id="todoterreno-2" onclick="todo_terreno(this)"><strong>Mercedes-Benz</strong> Unimog</a>
-                            <a href="#anchor-todoterreno" id="todoterreno-3" onclick="todo_terreno(this)"><strong>Toyota</strong> FJ40</a>
-                            <a href="#anchor-todoterreno" id="todoterreno-4" onclick="todo_terreno(this)"><strong>Jeep</strong> Wrangler</a>
-                            <a href="#anchor-todoterreno" id="todoterreno-5" onclick="todo_terreno(this)"><strong>Ford</strong> Bronco</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!---->
-    <div class="page-wrapper">
-        <div class="orient-slideshow"> <!-- DIVISAO TEXTO E SLIDESHOW-->
+    </header>
+
+    <div class="page-wrapper"> <!--BODY DA PÁGINA-->
+        <div class="orient-slideshow"> <!--DIV TEXTO INICIAL E SLIDESHOW COM IMAGENS DE MARCAS DOS CARROS-->
             <div class="slideshow-text">
                 <div class="div-text">
                     <ul>
@@ -203,31 +283,18 @@
             <a id="anchor-classico"></a>
         </div>
 
-        <div class="orient-slideshow-carro"> <!--DIV COM CLASSICO-->
-            <!--<div class="popup" id="popup" style="display: none">
-                <div class="popup-btn">
-                    <button class="popup-button" onclick="close_popup()">a</button>
-                </div>
-            </div>-->
+        <div class="orient-slideshow-carro"> <!--DIV CARROS CLASSICOS-->
             <div class="image-box">
                 <div class="true-image">
-                    <img src="carros-classicos/capri.jpg" id="carro-classico" width="100%">
-                    <a class="imaginary-button-left" id="1" onclick="slide_previous(this)">&lt;</a>
-                    <a class="imaginary-button-right" id="2" onclick="slide_next(this)">&gt;</a>
-                    <!--<div class="image-buttons">
-                        <button id="1" style="margin-right: 10px" onclick="slide_previous(this)">
-                            Anterior
-                        </button>
-                        <button id="2" onclick="slide_next(this)">
-                            Próximo
-                        </button>
-                    </div>-->
+                    <img src="carros-classicos/capri.jpg" id="carro-classico" width="100%"> <!--IMAGEM COM CARROS CLÁSSICOS-->
+                    <a class="imaginary-button-left button1" id="1" onclick="slide_previous(this)">&lt;</a> <!--BOTÃO LADO ESQUERDO NA IMAGEM-->
+                    <a class="imaginary-button-right button2" id="2" onclick="slide_next(this)">&gt;</a> <!--BOTÃO LADO DIREITO NA IMAGEM-->
                 </div>
             </div>
-            <div class="option-box">
+            <div class="option-box"> <!--DIV COM TEXTO INFORMATIVO SOBRE AS SPECS DO CARRO-->
                 <ul>
                     <li id="classic-info-1">
-                        Cavalos: 126 cv
+                        Cavalos: 126 CV
                     </li>
                     <li id="classic-info-2">
                         Binário: 235 Nm
@@ -244,22 +311,21 @@
                 </ul>
 
             </div>
-            <div class="text-box">
+            <div class="text-box"> <!--DIV COM TEXTO INFORMATIVO SOBRE O CARRO-->
                 <div class="true-text">
                     <ul>
-                        <li class="classic-text-1" id="classic-text-1">
-                            <!--<button onclick="popup()" class="popup-button">Detalhes</button>-->
+                        <li class="classic-text-1" id="classic-text-1"> <!--DIV COM NOME DO CARRO-->
                             Ford Capri
                         </li>
-                        <li class="classic-text-2" id="classic-text-2">
-                            Inicialmente intitulado de Mustang europeu, o Capri rapidamente ganhou a sua reputação. Um carro rápido, ágil, confortável e extremamente divertido de conduzir. Esteve em produção desde 1969 até 1986, com três gerações diferentes.
+                        <li class="classic-text-2" id="classic-text-2"> <!--DIV COM TEXTO SOBRE O CARRO-->
+                            Inicialmente intitulado de Mustang europeu, o Capri rapidamente ganhou a sua reputação. Um
+                            carro rápido, ágil, confortável e extremamente divertido de conduzir. Esteve em produção
+                            desde 1969 até 1986, com três gerações diferentes.
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-
-
 
         <div class="div-separador"> <!--SEPARADOR DE DIV-->
             <a id="anchor-sports"></a>
@@ -268,20 +334,12 @@
         <div class="orient-slideshow-carro"><!--DIV COM DESPORTIVO-->
             <div class="image-box">
                 <div class="true-image">
-                    <img src="carros-desportivos/r8.jpg" id="carro-desportivo" width="100%">
-                    <a class="imaginary-button-left" id="3" onclick="slide_previous(this)">&lt;</a>
-                    <a class="imaginary-button-right" id="4" onclick="slide_next(this)">&gt;</a>
-                    <!--<div class="image-buttons">
-                        <button id="3" style="margin-right: 10px" onclick="slide_previous(this)">
-                            Anterior
-                        </button>
-                        <button id="4" onclick="slide_next(this)">
-                            Próximo
-                        </button>
-                    </div>-->
+                    <img src="carros-desportivos/r8.jpg" id="carro-desportivo" width="100%"> <!--IMAGEM COM CARROS DESPORTIVOS-->
+                    <a class="imaginary-button-left" id="3" onclick="slide_previous(this)">&lt;</a> <!--BOTÃO LADO ESQUERDO NA IMAGEM-->
+                    <a class="imaginary-button-right" id="4" onclick="slide_next(this)">&gt;</a> <!--BOTÃO LADO DIREITO NA IMAGEM-->
                 </div>
             </div>
-            <div class="option-box">
+            <div class="option-box"> <!--DIV COM TEXTO INFORMATIVO SOBRE AS SPECS DO CARRO-->
                 <ul>
                     <li id="sports-info-1">
                         Cavalos: 602 CV
@@ -300,13 +358,15 @@
                     </li>
                 </ul>
             </div>
-            <div class="text-box">
+            <div class="text-box"> <!--DIV COM TEXTO INFORMATIVO SOBRE O CARRO-->
                 <ul>
-                    <li class="sports-text-1" id="sports-text-1">
+                    <li class="sports-text-1" id="sports-text-1"> <!--DIV COM NOME DO CARRO-->
                         Audi R8
                     </li>
-                    <li class="sports-text-2" id="sports-text-2">
-                        Facilmente reconhecido, um visual arrojado e com potência para dar calor nas estradas. Acompanhado com um V10 a debitar 540 cavalos e tração traseira, é um brinquedo para as crianças adultas.
+                    <li class="sports-text-2" id="sports-text-2"> <!--DIV COM TEXTO SOBRE O CARRO-->
+                        Facilmente reconhecido, um visual arrojado e com potência para dar calor nas estradas.
+                        Acompanhado com um V10 a debitar 540 cavalos e tração traseira, é um brinquedo para as crianças
+                        adultas.
                     </li>
                 </ul>
             </div>
@@ -319,20 +379,12 @@
         <div class="orient-slideshow-carro"> <!--DIV COM SUPER-->
             <div class="image-box">
                 <div class="true-image">
-                    <img src="carros-super/porsche.jpg" id="carro-super" width="100%">
-                    <a class="imaginary-button-left" id="5" onclick="slide_previous(this)">&lt;</a>
-                    <a class="imaginary-button-right" id="6" onclick="slide_next(this)">&gt;</a>
-                    <!--<div class="image-buttons">
-                        <button id="5" style="margin-right: 10px" onclick="slide_previous(this)">
-                            Anterior
-                        </button>
-                        <button id="6" onclick="slide_next(this)">
-                            Próximo
-                        </button>
-                    </div>-->
+                    <img src="carros-super/porsche.jpg" id="carro-super" width="100%"> <!--IMAGEM COM CARROS SUPER-->
+                    <a class="imaginary-button-left" id="5" onclick="slide_previous(this)">&lt;</a> <!--BOTÃO LADO ESQUERDO NA IMAGEM-->
+                    <a class="imaginary-button-right" id="6" onclick="slide_next(this)">&gt;</a> <!--BOTÃO LADO DIREITO NA IMAGEM-->
                 </div>
             </div>
-            <div class="option-box">
+            <div class="option-box"> <!--DIV COM TEXTO INFORMATIVO SOBRE AS SPECS DO CARRO-->
                 <ul>
                     <li id="super-info-1">
                         Cavalos: 690 CV
@@ -351,13 +403,15 @@
                     </li>
                 </ul>
             </div>
-            <div class="text-box">
+            <div class="text-box"> <!--DIV COM TEXTO INFORMATIVO SOBRE O CARRO-->
                 <ul>
-                    <li class="super-text-1" id="super-text-1">
+                    <li class="super-text-1" id="super-text-1"> <!--DIV COM NOME DO CARRO-->
                         Porsche 911 GT2 RS
                     </li>
-                    <li class="super-text-2" id="super-text-2">
-                        Um monstro das pistas, inicialmente desenhado para as curvas de pista o GT2 RS é o verdadeiro Porsche, uma verdadeira obra de arte. A geração 991 um 6 em linha de 3.8 litros a debitar 691 cavalos e 750 Nm de binário. É o verdadeiro brinquedo para graúdos.
+                    <li class="super-text-2" id="super-text-2"> <!--DIV COM TEXTO SOBRE O CARRO-->
+                        Um monstro das pistas, um carro de alto rendimento, o GT2 RS é o verdadeiro Porsche, uma
+                        verdadeira obra de arte. A geração 991 traz um 6 em linha de 3.8 litros a debitar 691 cavalos e
+                        750 Nm de binário. É o verdadeiro brinquedo para graúdos.
                     </li>
                 </ul>
             </div>
@@ -370,20 +424,12 @@
         <div class="orient-slideshow-carro"><!--DIV COM TODO TERRENO-->
             <div class="image-box">
                 <div class="true-image">
-                    <img src="carros-todoterreno/Defender.jpg" id="carro-todoterreno" width="100%">
-                    <a class="imaginary-button-left" id="7" onclick="slide_previous(this)">&lt;</a>
-                    <a class="imaginary-button-right" id="8" onclick="slide_next(this)">&gt;</a>
-                    <!--<div class="image-buttons">
-                        <button id="7" style="margin-right: 10px" onclick="slide_previous(this)">
-                            Anterior
-                        </button>
-                        <button id="8" onclick="slide_next(this)">
-                            Próximo
-                        </button>
-                    </div>-->
+                    <img src="carros-todoterreno/Defender.jpg" id="carro-todoterreno" width="100%"> <!--IMAGEM COM CARROS TODO TERRENO-->
+                    <a class="imaginary-button-left" id="7" onclick="slide_previous(this)">&lt;</a> <!--BOTÃO LADO ESQUERDO NA IMAGEM-->
+                    <a class="imaginary-button-right" id="8" onclick="slide_next(this)">&gt;</a> <!--BOTÃO LADO DIREITO NA IMAGEM-->
                 </div>
             </div>
-            <div class="option-box">
+            <div class="option-box"> <!--DIV COM TEXTO INFORMATIVO SOBRE AS SPECS DO CARRO-->
                 <ul>
                     <li id="todoterreno-info-1">
                         Cavalos: 120 CV
@@ -402,13 +448,14 @@
                     </li>
                 </ul>
             </div>
-            <div class="text-box">
+            <div class="text-box"> <!--DIV COM TEXTO INFORMATIVO SOBRE O CARRO-->
                 <ul>
-                    <li class="todoterreno-text-1" id="todoterreno-text-1">
+                    <li class="todoterreno-text-1" id="todoterreno-text-1"> <!--DIV COM NOME DO CARRO-->
                         Land Rover Defender
                     </li>
-                    <li class="todoterreno-text-2" id="todoterreno-text-2">
-                        Repartido em 3 fases. Um carro potente, com tração às quatro e bastante fiável. Usado não só no mundo civil mas também ao serviço militar bem como ao serviço dos corpos de bombeiros.
+                    <li class="todoterreno-text-2" id="todoterreno-text-2"> <!--DIV COM TEXTO SOBRE O CARRO-->
+                        Um carro potente, com tração às quatro e bastante fiável. Usado não só no mundo civil mas também
+                        ao serviço militar bem como ao serviço dos corpos de bombeiros.
                     </li>
                 </ul>
             </div>

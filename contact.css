@@ -1,0 +1,93 @@
+.test{
+    width: 60%;
+    margin-left: 20%;
+}
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.formulario-form{
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.formulario-label{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensagem{
+    display: flex;
+    align-items: center;
+}
+
+.mensagem textarea{
+    resize: none;
+}
+
+.formulario-input{
+    margin: 10px;
+}
+
+.botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario-input{
+    width: 30%;
+}
+
+.formulario-input-mensagem{
+    width: 50%;
+    height: 100px;
+}
+
+.formulario-input-btn-enviar{
+    border: none;
+    background-color: limegreen;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    transition: opacity 0.3s;
+}
+
+.formulario-input-btn-enviar:hover{
+    opacity: 0.7;
+}
+
+.formulario-input-btn-enviar:active{
+    opacity: 0.4;
+}
+
+.formulario-input-btn-limpar{
+    border: none;
+    background-color: red;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    transition: opacity 0.3s;
+}
+
+.formulario-input-btn-limpar:hover{
+    opacity: 0.7;
+}
+
+.formulario-input-btn-limpar:active{
+    opacity: 0.4;
+}
+
+.back-button{
+    text-decoration: none;
+    margin: 10px;
+}
+

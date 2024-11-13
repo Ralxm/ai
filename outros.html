@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 
+<html>
+
 <head>
+    <header id="topo"></header>
+    <title>Outros Veículos</title>
     <link rel="stylesheet" href="style.css">
+
+    <script src="theme.js"></script>
 </head>
 
 <style>
     .back-button {
-        margin-right: 85%;
-        cursor: pointer;
-        text-decoration: none;
-        margin-left: 20px;
+        margin-left: 87%;
+        font-weight: bold;
     }
 
     .inside-body-wrapper {
@@ -22,19 +26,58 @@
         float: left;
         justify-content: bottom;
     }
+
+    .darkmode .left-header-nav {
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .darkmode .center-header-nav {
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .darkmode .right-header-nav {
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .darkmode body {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .darkmode .div-text {
+        color: white;
+    }
+
+    .darkmode .orient-slideshow-carro {
+        color: white;
+    }
 </style>
 
-<html>
+
     <body>
         <div class="header-nav">
             <div class="left-header-nav">
-                <a class="back-button" href="index.html">Voltar</a>
+                <div class="time-and-theme">
+                    <div class="theme-container">
+                        <label class="switch">
+                            <input type="checkbox" id="theme" onchange="changeTheme()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="time">
+                        <a id="date">
+                            <script src="horario.js" type="text/javascript"></script>
+                        </a>
+                    </div>
+                </div>
+                <!--<a class="back-button" href="index.html">Voltar</a>-->
             </div>
             <div class="center-header-nav">
                 <a>Automóveis<br>Especiais</a>
             </div>
             <div class="right-header-nav">
-
+                <div class="voltar">
+                    <button onclick="window.location.href='index.html'" class="back-button">Voltar</button>
+                </div>
             </div>
         </div>
 
@@ -43,19 +86,19 @@
                 <div class="orient-slideshow-carro">
                     <div class="image-box">
                         <div class="true-image">
-                            <img src="carros-especiais/Cisterna.jpg" id="carro-especial1" width="100%">
+                            <img src="carros-especiais/A001.jpg" id="carro-especial1" width="100%">
                         </div>
                     </div>
                 <div class="option-box">
                     <ul>
                         <li>
-                            Cavalos: 410 cv
+                            Cavalos: 231 CV
                         </li>
                         <li>
-                            Binário: 2000 Nm
+                            Binário: 900 Nm
                         </li>
                         <li>
-                            Peso: 7500 + 21000 Kg
+                            Peso: 6500 + 3000 Kg
                         </li>
                         <li>
                             Combustível: Gasóleo
@@ -68,11 +111,11 @@
                 <div class="text-box">
                     <div class="true-text">
                         <ul>
-                            <li id="classic-text-1">
-                                <strong>Grande Cisterna</strong>
+                            <li class="classic-text-1" id="classic-text-1">
+                                Mercedes-Benz Atego "VUCI 01"
                             </li>
-                            <li id="classic-text-2">
-                                a
+                            <li class="classic-text-2" id="classic-text-2">
+                                Transformado em Veículo Urbano de Combate a Incêndios por uma empresa portuguesa, este Mercedes-Benz Atego encontra-se na corporação dos Bombeiros de Canas de Senhorim. Está dotado de uma moto bomba acoplada para combate a incêndios urbanos e industriais bem como com equipamento de desencareceramento.
                             </li>
                         </ul>
                     </div>
@@ -92,7 +135,7 @@
                 <div class="option-box">
                     <ul>
                         <li>
-                            Cavalos: 550 cv
+                            Cavalos: 550 CV
                         </li>
                         <li>
                             Binário: 292 Nm
@@ -111,11 +154,11 @@
                 <div class="text-box">
                     <div class="true-text">
                         <ul>
-                            <li id="classic-text-1">
+                            <li class="classic-text-1" id="classic-text-1">
                                 Lancia Delta S4
                             </li>
-                            <li id="classic-text-2">
-                                a
+                            <li class="classic-text-2" id="classic-text-2">
+                                Um monstro de rally, o Delta S4 foi um carro desenhado para competir no Grupo B do Campeonato Mundial de Rally nos anos de 1985 e 1986. Equipado com um motor a debitar 550 cavalos e 291 Nm de binário com tração às quatro rodas. Uma das últimas verdadeiras máquinas no rally.
                             </li>
                         </ul>
                     </div>
@@ -135,7 +178,7 @@
                 <div class="option-box">
                     <ul>
                         <li>
-                            Cavalos: 1080 cv
+                            Cavalos: 1080 CV
                         </li>
                         <li>
                             Binário: ? Nm
@@ -154,11 +197,11 @@
                 <div class="text-box">
                     <div class="true-text">
                         <ul>
-                            <li id="classic-text-1">
-                                RB 19
+                            <li class="classic-text-1" id="classic-text-1">
+                                Red Bull RB19
                             </li>
-                            <li id="classic-text-2">
-                                a
+                            <li class="classic-text-2" id="classic-text-2">
+                                O carro mais dominante na história do campeonato de Fórmula 1. Com um V6 Turbo-Híbrido a debitar 1080 cavalos e a pesar apenas 798 Kg é uma excelente peça de engenharia.
                             </li>
                         </ul>
                     </div>
@@ -166,8 +209,21 @@
             </div>
         </div>
     </div>
+    
     <footer>
-
+        <div class="footer-wrapper">
+            <div class="footer-wrapper-buttons1">
+                <ul style="list-style-type: none;">
+                    <li>
+                        <a class="topo" href="#topo">&uarr; Topo</a>
+                    </li>
+                    <li>
+                        <a style="font-size: 0.7vw">&copy; 2023 by Guilherme Soeiro, Rafael Azevedo and Tiago Nunes</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </footer>
+
     </body>
 </html>
